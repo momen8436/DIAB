@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #333;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        input[type="password"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            body {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Try finding H.Diab</h1>
+    </header>
+    <div class="container">
+        <p>To see the message, write the password</p>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button onclick="checkPassword()">Enter</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("passwordInput").value;
+            const messageElement = document.getElementById("message");
+
+            if (password === "1205") {
+                window.location.href = "index.html";
+            } else {
+                messageElement.textContent = "The password is wrong";
+            }
+        }
+    </script>
+</body>
+</html>
